@@ -68,29 +68,11 @@ h1
   font-size: 6rem;
 }
 
-.welcome-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #000;
-    background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
-  }
-  
-  .welcome-section > p {
-    font-size: 3rem;
-    font-weight: 200;
-    font-style: italic;
-    color: white;
-  }
-
   /*Projects sekce*/
 
   .projects-section {
     text-align: center;
-    padding: 10rem 2rem;
+    padding: 5rem 2rem;
     background-image: linear-gradient(62deg, #212121 0%, #474747 100%);
   }
   
@@ -157,28 +139,21 @@ h1
     padding: 2rem 0.5rem;
   }
   
-  .btn {
+  .button {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 2px;
+    background-color: #ffffff;
+    color:rgb(0, 0, 0);
+    transition: 0.3s;
   }
   
-  .btn-show-all {
-    font-size: 2rem;
-    background: rgb(78, 78, 78);
-    transition: background 0.3s ease-out;
+  .button:hover {
+    background-color: #000000;
+    color:yellow;
   }
-  
-  .btn-show-all:hover {
-    background:black;
-  }
-  
-  .btn-show-all:hover > i {
-    transform: translateX(2px);
-  }
-  
-  .btn-show-all > i {
-    margin-left: 10px;
-    transform: translateX(0);
-    transition: transform 0.3s ease-out;
-  }
+
+  img:hover {
+    filter: blur(3px);
+}
+

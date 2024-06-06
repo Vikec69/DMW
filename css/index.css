@@ -74,8 +74,10 @@ a {
     align-items: center;
     width: 100%;
     height: 100vh;
-    background-color: #000000;
-    background-image: linear-gradient(62deg, #212121 0%, #474747 100%);
+    background-color: rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
   }
   
   .welcome-section > p {
@@ -84,6 +86,16 @@ a {
     font-style: italic;
     color: white;
   }
+
+  .video-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+
 
   h1
   {
@@ -132,7 +144,7 @@ a {
     max-width: 980px;
     margin-top: 4rem;
     flex-wrap: wrap;
-    color:white
+    color: rgb(255, 221, 0);
   }
   
   .contact-details {
@@ -162,7 +174,7 @@ a {
     font-size: 1.3rem; 
     font-weight: 400;
     line-height: 1;
-    color:white
+    color:white;
   }
   
   footer i {
@@ -176,3 +188,29 @@ a {
     }
   }
   
+  .cont {
+    max-width: 100%;
+    margin: auto;
+    padding: 2rem ;
+    background-color: rgb(45, 45, 45);
+  }
+ .predmety {
+    display: flex;
+    color:white;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    padding-left: 4rem;
+  }
+ .predmet {
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+  }
+ .predmet i {
+    font-size: 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+  }
+

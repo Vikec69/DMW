@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="display: table;
+margin: auto; height: 100%;
+">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DMW | Assets</title>
+    <title>DMW | Feedback</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel ="stylesheet" href = "css/index.css">
-    <link rel ="stylesheet" href = "css/assets.css">
+    <link rel ="stylesheet" href = "css/feedback.css">
     <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap" rel="stylesheet">
     <link
       href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
@@ -14,7 +16,8 @@
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
-<body style="background-image: linear-gradient(62deg, #212121 0%, #474747 100%);">
+<body style="background-color: rgb(33, 33, 33); height: 100%;     display: table-cell;
+vertical-align: middle;">
   <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #323232;">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">DMW</a>
@@ -24,41 +27,39 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="index.html#contacts">Contacts</a>
+          </li>              
+          <li class="nav-item">
+            <a class="nav-link" href="pricing.html">Pricing</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="tutorials.html">Tutorials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="feedback.html">Feedback</a>
+            <a class="nav-link active" aria-current="page" href="feedback.html">Feedback</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" aria-current="page" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Assets
             </a>
             <ul class="dropdown-menu" style="background-color: #323232;" >
-                <li><a class="dropdown-item" style="color: white;" href="textures.html">TEXTURES</a></li>
-                <li><a class="dropdown-item" style="color: white;" href="coloring.html">COLORING</a></li>
-              </ul>
+              <li><a class="dropdown-item" style="color: white;" href="textures.html">TEXTURES</a></li>
+              <li><a class="dropdown-item" style="color: white;" href="coloring.html">COLORING</a></li>
+            </ul>
           </li>
         </ul>
       </div>
     </div>
-  </nav>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-        <label class="form-check-label" for="flexRadioDefault1">
-          Default radio
-        </label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-        <label class="form-check-label" for="flexRadioDefault2">
-          Default checked radio
-        </label>
-      </div>
+  </nav> 
+  <form>      
+        <input name="name" type="text" class="feedback-input" placeholder="Name" />   
+        <input name="email" type="text" class="feedback-input" placeholder="Email" />
+        <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+        <input type="submit" value="SUBMIT"/>
+  </form>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
