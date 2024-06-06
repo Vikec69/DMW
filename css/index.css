@@ -15,6 +15,7 @@
   background-color: #252525;
 }
 
+
 html {
   box-sizing: border-box;
 
@@ -29,6 +30,10 @@ html {
   html {
     font-size: 60%;
   }
+  video{
+    transform: translate(-50%);
+    margin-left: 50vw;
+  }
 }
 
 /* 980px / 16px = 61.25em */
@@ -36,12 +41,20 @@ html {
   html {
     font-size: 58%;
   }
+  video{
+    transform: translate(-50%);
+    margin-left: 50vw;
+  }
 }
 
 /* 460px / 16px = 28.75em */
 @media (max-width: 28.75em) {
   html {
     font-size: 55%;
+  }
+  video{
+    transform: translate(-50%);
+    margin-left: 50vw;
   }
 }
 
@@ -94,6 +107,10 @@ a {
     min-width: 100%;
     min-height: 100%;
     z-index: -1;
+  }
+
+  video{
+    
   }
 
 
