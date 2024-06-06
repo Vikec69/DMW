@@ -545,7 +545,7 @@ a {
     display: inline-block;
     height: auto;
     padding: 1.3em 2em;
-    color: yellow;
+    color: rgb(255, 255, 255);
     border-radius: 8px;
     border: 2px solid yellow;
     font-size: 1.4rem;
@@ -556,9 +556,9 @@ a {
 	width: 70%;
 }
 
-.no-touch .select:hover {
+.select:hover {
     background-color: yellow;
-	color: #ffffff;
+	color: #000000;
 }
 
 .exclusive .select {
@@ -566,18 +566,11 @@ a {
 	color: yellow;
 }
   
-.no-touch .exclusive .select:hover {
-    background-color: #121212;
+.exclusive .select:hover {
+    color: #000000;
+    background-color: yellow;
 }
-  
-.secondary-theme .exclusive .select {
-    background-color: #444444;
-}
-  
-.no-touch .secondary-theme .exclusive .select:hover {
-    background-color: #eaff00;
-}
-  
+
 .has-margins .select {
     display: block;
     padding: 1.7em 0;
@@ -805,3 +798,5 @@ a {
       text-align: center;
     }
   }
+
+  

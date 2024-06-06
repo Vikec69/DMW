@@ -153,7 +153,7 @@ h1
     color:yellow;
   }
 
-  img:hover {
-    filter: blur(3px);
-}
-
+  .projects-grid:has(img:hover) img:not(:hover) {
+    filter: blur(4px);
+    transition: 0.3s;
+  }
