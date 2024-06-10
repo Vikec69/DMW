@@ -46,6 +46,12 @@
               <li><a class="dropdown-item" style="color: white;" href="textures.html">TEXTURES</a></li>
               <li><a class="dropdown-item" style="color: white;" href="coloring.html">COLORING</a></li>
             </ul>
+            <div class="shoppingBasket ms-auto me-3 mt-2">
+              <a href="cart.html">
+                <i class="fa fa-cart-shopping fa-xl" style="color: white;"></i>
+                <span class="quantity">0</span>
+              </a>
+            </div>
           </li>
         </ul>
       </div>
@@ -60,4 +66,17 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cartQuantityElement = document.querySelector('.quantity');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let cartQuantity = 0;
+    cart.forEach(item => {
+        cartQuantity += item.quantity;
+    });
+
+    cartQuantityElement.textContent = cartQuantity;
+});
+</script>
 </html>

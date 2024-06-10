@@ -20,42 +20,48 @@
   />
 </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #323232;">
-        <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #323232;">
+      <div class="container-fluid">
           <a class="navbar-brand" href="index.html">DMW</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+              <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contacts">Contacts</a>
-              </li>              
-              <li class="nav-item">
-                <a class="nav-link" href="pricing.html">Pricing</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="tutorials.html">Tutorials</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="feedback.html">Feedback</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Assets
+              <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contacts">Contacts</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="pricing.html">Pricing</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="tutorials.html">Tutorials</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="feedback.html">Feedback</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Assets
+                      </a>
+                      <ul class="dropdown-menu" style="background-color: #323232;">
+                          <li><a class="dropdown-item" style="color: white;" href="textures.html">TEXTURES</a></li>
+                          <li><a class="dropdown-item" style="color: white;" href="coloring.html">COLORING</a></li>
+                      </ul>
+                  </li>
+              </ul>
+              <div class="shoppingBasket ms-auto me-3 mt-2">
+                <a href="cart.html">
+                  <i class="fa fa-cart-shopping fa-xl" style="color: white;"></i>
+                  <span class="quantity">0</span>
                 </a>
-                <ul class="dropdown-menu" style="background-color: #323232;" >
-                  <li><a class="dropdown-item" style="color: white;" href="textures.html">TEXTURES</a></li>
-                  <li><a class="dropdown-item" style="color: white;" href="coloring.html">COLORING</a></li>
-                </ul>
-              </li>
-            </ul>
+              </div>
           </div>
-        </div>
-      </nav>
+      </div>
+  </nav>
 
       <section class="welcome-section">
         <h1>WELCOME TO</h1>
@@ -130,4 +136,17 @@
       </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cartQuantityElement = document.querySelector('.quantity');
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    let cartQuantity = 0;
+    cart.forEach(item => {
+        cartQuantity += item.quantity;
+    });
+
+    cartQuantityElement.textContent = cartQuantity;
+});
+  </script>
 </html>

@@ -4,12 +4,13 @@
     box-shadow:0 2px 0 rgba(0, 0, 0, 0.4);
     z-index: 4;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     position: fixed;
     top:0;
     left:0;
     width: 100%;
 }
+
 
 .dropdown-item:hover{
   background-color: #252525;
@@ -109,11 +110,6 @@ a {
     z-index: -1;
   }
 
-  video{
-    
-  }
-
-
   h1
   {
     font-family: 'Raleway', sans-serif;
@@ -210,6 +206,7 @@ a {
     margin: auto;
     padding: 2rem ;
     background-color: rgb(45, 45, 45);
+    transition: 0.5s;
   }
  .predmety {
     display: flex;
@@ -231,3 +228,16 @@ a {
     margin-bottom: 0.5rem;
   }
 
+.shoppingBasket {
+  position: relative;
+}
+
+.shoppingBasket .quantity {
+  background-color: rgb(33, 33, 33);
+  color: rgb(255, 255, 255);
+  border-radius: 50%;
+  padding: 0 8px;
+  position: absolute;
+  top: -15px;
+  left: 20px;
+}

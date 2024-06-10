@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DMW | Cart </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel ="stylesheet" href = "css/index.css">
+    <link rel ="stylesheet" href = "css/cart.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,400&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+    crossorigin="anonymous"
+  />
+</head>
+<body style="background-image: linear-gradient(90deg, rgb(18, 18, 18) 0%, #343434 100%);">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #323232;">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="index.html">DMW</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                  <ul class="navbar-nav me-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="index.html#contacts">Contacts</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="pricing.html">Pricing</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="tutorials.html">Tutorials</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="feedback.html">Feedback</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Assets
+                          </a>
+                          <ul class="dropdown-menu" style="background-color: #323232;">
+                              <li><a class="dropdown-item" style="color: white;" href="textures.html">TEXTURES</a></li>
+                              <li><a class="dropdown-item" style="color: white;" href="coloring.html">COLORING</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                  <div class="shoppingBasket ms-auto me-3 mt-2">
+                    <a href="cart.html">
+                      <i class="fa fa-cart-shopping fa-xl" style="color: white;"></i>
+                      <span class="quantity">0</span>
+                    </a>
+                  </div>
+              </div>
+          </div>
+      </nav>
+      <div class="d-flex flex-column justify-content-center align-items-center" style="min-height: 100vh;">
+        <div class="mb-3">
+     <ul class="cart-items" style="color: white;"></ul>
+    </div>
+    <div>
+     <p class="cart-total" style="color: white;">Total price: 0 $</p>
+    </div>
+    <button class="btn mt-3 CHECKOUT" id="checkout-button">CHECKOUT</button>
+    </div>
+
+      <!-- Modální okno -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="paymentModalLabel">Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Zde můžete přidat formulář nebo informace o platbě -->
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name on the card</label>
+              <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="cardNumber" class="form-label">Card number</label>
+              <input type="text" class="form-control" id="cardNumber" required>
+            </div>
+            <div class="mb-3">
+              <label for="expiryDate" class="form-label">Expiration date</label>
+              <input type="text" class="form-control" id="expiryDate" required>
+            </div>
+            <div class="mb-3">
+              <label for="cvv" class="form-label">CVV</label>
+              <input type="text" class="form-control" id="cvv" required>
+            </div>
+            <button type="submit" class="btn btn-dark">CONFIRM</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+     <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const cartItems = document.querySelector('.cart-items');
+    const cartTotal = document.querySelector('.cart-total');
+    const checkoutButton = document.querySelector('#checkout-button');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    function updateCart() {
+        cartItems.innerHTML = '';
+        cart.forEach(item => {
+            const li = document.createElement('li');
+            li.classList.add('cart-item', 'list-group-item');
+            li.innerHTML = `
+                ${item.name} - ${item.quantity} pcs - ${item.price * item.quantity} $
+                <button class="btn btn-secondary btn-sm decrease">-</button>
+                <button class="btn btn-secondary btn-sm increase">+</button>
+                <button class="btn btn-danger btn-sm remove">X</button>
+            `;
+            li.querySelector('.decrease').addEventListener('click', () => {
+                if (item.quantity > 1) {
+                    item.quantity--;
+                } else {
+                    cart = cart.filter(cartItem => cartItem.id !== item.id);
+                }
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            });
+            li.querySelector('.increase').addEventListener('click', () => {
+                item.quantity++;
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            });
+            li.querySelector('.remove').addEventListener('click', () => {
+                cart = cart.filter(cartItem => cartItem.id !== item.id);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+            });
+            cartItems.appendChild(li);
+        });
+
+        const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        cartTotal.textContent = `Total price: ${total} $`;
+    }
+
+    updateCart();
+
+    checkoutButton.addEventListener('click', () => {
+        if (cart.length === 0) {
+            alert('You cart is empty!');
+        } else {
+            const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+            paymentModal.show();
+        }
+    });
+});
+    </script>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</html>

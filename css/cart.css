@@ -1,0 +1,37 @@
+.cart-icon {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.cart {
+    margin-top: 20px;
+}
+
+.cart-items {
+    list-style-type: none;
+}
+
+.cart-total {
+    font-weight: bold;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item button {
+    margin-left: 10px;
+}
+
+.CHECKOUT {
+    background-color: yellow; 
+    color: #222222;
+}
+
+.CHECKOUT:hover {
+    background-color: rgb(255, 221, 0);
+    color: #222222;
+}
